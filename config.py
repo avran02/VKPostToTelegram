@@ -1,5 +1,6 @@
 from myconfig import *
 
+
 TOKEN = my_token
 API_KEY = my_api_key
 PATH = my_path

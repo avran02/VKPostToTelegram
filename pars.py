@@ -1,8 +1,9 @@
 import requests
 from config import API_KEY, PATH
 import json
-class Pars():
 
+
+class Pars():
     def __init__(self):
         url = f'https://api.vk.com/method/wall.get?access_token={API_KEY}&v=5.131&owner_id=-34075676&count=2'
         self.page = requests.get(url).text
@@ -11,7 +12,6 @@ class Pars():
     def pars_it(self):
         self.get_text()     
         self.get_photos()
-
 
     def get_text(self):
         for post in self.js:
@@ -37,7 +37,5 @@ class Pars():
                 f.write(response.content)
 
 
-if __name__ == '__main__':
-    obj = Pars()
-    obj.pars_it()
-    print('Готово')
+for i in range (3):
+    print(i)
