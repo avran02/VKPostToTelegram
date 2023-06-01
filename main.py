@@ -8,6 +8,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.lang import Builder
 from kivy.core.window import Window
+from kivy.utils import escape_markup
 Builder.load_file('styles.kv')
 
 
@@ -62,7 +63,12 @@ class MyApp(App):
 
     def pars_and_set_text(self):
         Func.pars(self)
-        self.label.text = Func.read_file(self)
+        own_text = Func.read_file(self, 'PostText')
+        fw_text = Func.read_file(self, 'FwPostText')
+        self.label.text = escape_markup(f'\nСобственный текст:\n\n'
+                           f'{own_text}\n'
+                           f'\nТекст пересланного сообщения:\n\n'
+                           f'{fw_text}')
     
 
 class Func():
@@ -71,8 +77,8 @@ class Func():
         obj = Pars()
         obj.pars_it()
 
-    def read_file(self):
-        with open(f'{PATH}/tmp/PostText.txt', "r") as f:
+    def read_file(self, name):
+        with open(f'{PATH}/tmp/{name}.txt', "r") as f:
             text = f.read()
             return text
     

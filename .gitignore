@@ -1,2 +1,5 @@
 myconfig.py
 __pycache__/
+/tmp/.
+venv
+
