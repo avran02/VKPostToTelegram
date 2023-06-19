@@ -3,13 +3,17 @@ from telebot.types import InputMediaPhoto
 import os
 from config import TOKEN, TG_CHAT_ID, PATH
 
-#467380177
+
 class Bot_poster():
     def __init__(self):
         self.bot = telebot.TeleBot(TOKEN)
         self.files = None
         self.media_group = None
-    
+
+    def clear_folder(self):
+        self.__find_photos()
+        self.__clear_tmp()
+
     def post_to_tg(self, text):
         self.__find_photos()
         if self.files == []:
