@@ -33,9 +33,9 @@ class Bot_poster():
     def __clear_tmp(self):
         for i in self.files:
             os.remove(f'{PATH}/tmp/{i}')
-        with open (f'{PATH}/tmp/PostText.txt', "w") as f:
+        with open (f'{PATH}/tmp/PostText.txt', "w", encoding='utf-8') as f:
             f.write('')
-        with open (f'{PATH}/tmp/FwPostText.txt', "w") as f:
+        with open (f'{PATH}/tmp/FwPostText.txt', "w", encoding='utf-8') as f:
             f.write('')
         self.media_group = []
         

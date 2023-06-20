@@ -100,7 +100,7 @@ class Func():
         obj.pars_pinned_text()
 
     def read_file(self, name):
-        with open(f'{PATH}/tmp/{name}.txt', "r") as f:
+        with open(f'{PATH}/tmp/{name}.txt', "r", encoding='utf-8') as f:
             text = f.read()
             return text
     

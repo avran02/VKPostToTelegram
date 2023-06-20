@@ -30,7 +30,7 @@ class Pars():
 
     def __get_pinned_text(self, item, name):
         self.post = item[0] 
-        with open(f'{PATH}/tmp/{name}.txt', 'w') as f:
+        with open(f'{PATH}/tmp/{name}.txt', 'w', encoding='utf-8') as f:
             f.write(self.post['text'])
         return self.post['text']
 
@@ -42,7 +42,7 @@ class Pars():
             except:
                 self.post = post
                 break
-        with open(f'{PATH}/tmp/{name}.txt', 'w') as f:
+        with open(f'{PATH}/tmp/{name}.txt', 'w', encoding='utf-8') as f:
             f.write(self.post['text'])
         return self.post['text']
 
